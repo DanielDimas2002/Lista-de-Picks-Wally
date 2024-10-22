@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picks do Chat - League of Legends</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Picks do chat do Wally</h1>
+            <button id="adicionarCampeao">Adicionar Campeão</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tabelaPicks">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Campeão</th>
+                        <th>Partidas Restantes</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os campeões serão adicionados dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Pop-up para adicionar e editar campeão -->
+        <div id="popupForm" class="popup">
+            <form id="formCampeao">
+                <label for="nomeCampeao">Nome do Campeão:</label>
+                <input type="text" id="nomeCampeao" required>
+
+                <label for="partidasCampeao">Quantidade de Partidas:</label>
+                <input type="number" id="partidasCampeao" min="1" required>
+
+                <button type="submit">Salvar</button>
+                <button type="button" id="cancelarPopup">Cancelar</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

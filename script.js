@@ -74,11 +74,18 @@ cancelarPopup.addEventListener('click', () => {
 function reduzirVida(index) {
     if (campeoes[index].partidas > 0) {
         campeoes[index].partidas -= 1;
-        atualizarTabela();
+        
+        // Se a vida (partidas) chegar a 0, remove o campeão
+        if (campeoes[index].partidas === 0) {
+            removerCampeao(index); // Chama a função para remover o campeão
+        } else {
+            atualizarTabela(); // Atualiza a tabela
+        }
     } else {
         alert('O campeão não tem mais partidas restantes.');
     }
 }
+
 
 // Função para editar um campeão
 function editarCampeao(index) {

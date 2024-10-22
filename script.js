@@ -83,14 +83,14 @@ function reduzirVida(index) {
         if (campeoes[index].partidas === 0) {
             const confirmacao = window.confirm(`Já acabou de trollar com o(a) ${campeoes[index].nome} Wally?`);
             if (confirmacao) {
-                removerCampeao(index); // Chama a função para remover o campeão
+                removerCampeao(index); 
             } else {
                 // Se o usuário não confirmar, restaura a vida para 1 (ou qualquer valor que você escolher)
                 campeoes[index].partidas = 1; 
-                atualizarTabela(); // Atualiza a tabela
+                atualizarTabela(); 
             }
         } else {
-            atualizarTabela(); // Atualiza a tabela normalmente
+            atualizarTabela(); 
         }
     } else {
         alert('O campeão não tem mais partidas restantes.');
@@ -134,7 +134,7 @@ function moverParaTopo(index) {
 
 // Função para remover um campeão
 function removerCampeao(index) {
-    const confirmacao = window.confirm(`Você tem certeza que deseja excluir ${campeoes[index].nome} da lista?`);
+    const confirmacao = window.confirm(`Wally, tem certeza que deseja excluir ${campeoes[index].nome} da lista?`);
     if (confirmacao) {
         campeoes.splice(index, 1);
         atualizarTabela();

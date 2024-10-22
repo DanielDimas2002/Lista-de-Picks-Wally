@@ -1,31 +1,32 @@
-/* Estilos globais */
 body {
-    font-family: 'Oswald', serif; /* Fonte com estilo épico */
-    background-color: #1f1f1f; /* Fundo escuro, similar ao jogo */
-    color: #f0e6d2; /* Cor de texto creme, para melhor contraste */
+    font-family: 'Oswald', serif; 
+    background-color: #1f1f1f; 
+    color: #f0e6d2; 
     margin: 0;
     padding: 0;
 }
-
+strong{
+    color: #c49e3a;
+}
 h1 {
     font-size: 2em;
-    font-family: 'Oswald', serif; /* Fonte com toque medieval */
+    font-family: 'Oswald', serif; 
     text-align: center;
-    color: #c49e3a; /* Dourado para destaque */
+    color: #c49e3a; 
 }
 
-/* Estilo do Menu */
 header {
-    background-color: #131313; /* Cor escura com tom de fantasia */
+    background-color: #131313; 
     padding: 15px;
 }
 
 nav {
     display: flex;
-    justify-content: space-between; /* Mantém o título à esquerda e o botão à direita */
+    justify-content: space-between; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap; 
 }
 
 button {
@@ -43,7 +44,7 @@ button:hover {
     background-color: #b88929;
 }
 
-/* Tabela */
+
 section#tabelaPicks {
     max-width: 1200px;
     margin: 30px auto;
@@ -66,7 +67,7 @@ table th, table td {
 }
 
 th {
-    color: #c49e3a; /* Dourado nas colunas da tabela */
+    color: #c49e3a; 
 }
 
 tbody tr:hover {
@@ -74,7 +75,7 @@ tbody tr:hover {
 }
 
 button.acao {
-    background-color: #c49e3a; /* Cor para ações */
+    background-color: #c49e3a; 
     color: white;
     padding: 5px 10px;
     border: none;
@@ -87,9 +88,22 @@ button.acao:hover {
     background-color: #c49e3a;
 }
 
-/* Pop-up */
+.destaque{
+    background-color: #ff6347;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.destaque:hover{
+    background-color: #ff4500;
+}
+
 .popup {
-    display: none; /* Escondido por padrão */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -105,7 +119,7 @@ button.acao:hover {
     padding: 30px;
     border-radius: 10px;
     max-width: 400px;
-    width: 100%;
+    width: 90%; 
 }
 
 form {
@@ -131,4 +145,61 @@ button#cancelarPopup {
 
 button#cancelarPopup:hover {
     background-color: #ff6347;
+}
+
+.instrucoes {
+    display: none; 
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 300px; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    overflow-y: auto; 
+    z-index: 1000; 
+}
+
+#instrucoesBotao {
+    background-color: #ff6347; 
+}
+
+#instrucoesBotao:hover {
+    background-color: #ff4500;
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; 
+    }
+
+    nav {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    button {
+        width: 100%; 
+        margin: 5px 0; 
+    }
+
+    #popupForm {
+        width: 90%; 
+    }
+
+    .instrucoes {
+        width: 80%; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em; 
+    }
+
+    button {
+        font-size: 0.9em; 
+    }
 }

@@ -18,8 +18,30 @@
         <nav>
             <h1>Picks do chat do Wally</h1>
             <button id="adicionarCampeao">Adicionar Campeão</button>
+            <button id="instrucoesBotao">Instruções</button>
         </nav>
     </header>
+
+    <aside id="instrucoes" class="instrucoes">
+        <h2>Instruções</h2>
+        <p>Olá Wally, tudo bem? Bem-vindo ao sistema de picks do chat!</p>
+        <p>Você pode adicionar campeões à lista e gerenciar suas partidas (vidas). Cada campeão começa com um número de
+            vidas e, quando for manso e perder, você pode reduzir esse número.</p>
+        <p>Abaixo estão os botões disponíveis para cada campeão:</p>
+        <ul>
+            <li><strong>Reduzir Vida</strong>: Use este botão para diminuir o número de vidas do campeão.</li>
+            <li><strong>Editar</strong>: Clique aqui para modificar o nome ou a quantidade de vidas do campeão.</li>
+            <li><strong>↑</strong>: Mova o campeão uma posição para cima na lista.</li>
+            <li><strong>↓</strong>: Mova o campeão uma posição para baixo na lista.</li>
+            <li><strong>Topo</strong>: Leve o campeão para o topo da lista.</li>
+            <li><strong>Excluir</strong>: Remova o campeão da lista.</li>
+        </ul>
+        <p>Os dados são salvos automaticamente no seu navegador, ou seja, mesmo se você fechar a página ou o navegador,
+            suas informações permanecerão lá, para que você possa voltar e continuar de onde parou, desde que use a
+            mesma conta, ok?</p>
+        <button id="sobreDev"><a href="https://github.com/DanielDimas2002" target="_blank">Sobre o Dev</a></button>
+        <button id="fecharInstrucoes">Fechar</button>
+    </aside>
 
     <main>
         <section id="tabelaPicks">
@@ -32,7 +54,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Os campeões serão adicionados dinamicamente -->
+                    
                 </tbody>
             </table>
         </section>

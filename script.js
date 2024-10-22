@@ -6,6 +6,10 @@ const nomeCampeaoInput = document.getElementById('nomeCampeao');
 const partidasCampeaoInput = document.getElementById('partidasCampeao');
 const cancelarPopup = document.getElementById('cancelarPopup');
 const tabelaPicksBody = document.querySelector('#tabelaPicks tbody');
+const instrucoesBotao = document.getElementById('instrucoesBotao');
+const instrucoesTela = document.getElementById('instrucoes');
+const fecharInstrucoes = document.getElementById('fecharInstrucoes');
+
 
 let campeoes = [];
 
@@ -20,12 +24,12 @@ function atualizarTabela() {
             <td>${campeao.nome}</td>
             <td>${campeao.partidas}</td>
             <td>
-                <button class="acao" onclick="reduzirVida(${index})">Reduzir Vida</button>
+                <button class="destaque" onclick="reduzirVida(${index})">Reduzir Vida</button>
                 <button class="acao" onclick="editarCampeao(${index})">Editar</button>
                 <button class="acao" onclick="moverParaCima(${index})">↑</button>
                 <button class="acao" onclick="moverParaBaixo(${index})">↓</button>
                 <button class="acao" onclick="moverParaTopo(${index})">Topo</button>
-                <button class="acao" onclick="removerCampeao(${index})">Excluir</button>
+                <button class="destaque" onclick="removerCampeao(${index})">Excluir</button>
             </td>
         `;
 
@@ -130,8 +134,11 @@ function moverParaTopo(index) {
 
 // Função para remover um campeão
 function removerCampeao(index) {
-    campeoes.splice(index, 1);
-    atualizarTabela();
+    const confirmacao = window.confirm(`Você tem certeza que deseja excluir ${campeoes[index].nome} da lista?`);
+    if (confirmacao) {
+        campeoes.splice(index, 1);
+        atualizarTabela();
+    }
 }
 
 // Recupera os dados do localStorage ao carregar a página
@@ -141,4 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
         campeoes = JSON.parse(campeoesSalvos);
         atualizarTabela();
     }
+});
+
+// Função para abrir a tela lateral de instruções
+instrucoesBotao.addEventListener('click', () => {
+    instrucoesTela.style.display = 'block'; // Exibe a tela lateral
+});
+
+// Função para fechar a tela lateral de instruções
+fecharInstrucoes.addEventListener('click', () => {
+    instrucoesTela.style.display = 'none'; // Esconde a tela lateral
 });
